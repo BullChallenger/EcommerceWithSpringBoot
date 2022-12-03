@@ -14,7 +14,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl_auto: create
+      ddl_auto: validate
 
     database-platform: org.hibernate.dialect.MySQL8Dialect
 
@@ -26,6 +26,15 @@ spring:
     devtools:
       livereload:
         enabled: true
+
+  servlet:
+    multipart:
+      maxFileSize: 20MB
+      maxRequestSize: 100MB
+
+itemImgLocation: C:/Users/am23a/shop/item
+
+uploadPath: file:///C:/Users/am23a/shop
 
 logging:
   level:

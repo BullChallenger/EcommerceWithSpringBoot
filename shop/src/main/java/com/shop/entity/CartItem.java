@@ -10,18 +10,18 @@ import javax.persistence.*;
 @Table(name = "CART_ITEM")
 @Getter
 @Setter
-public class CartItem {
+public class CartItem extends BaseEntity {
 
     @Id
     @GeneratedValue
     @Column(name = "CART_ITEM_ID")
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "CART_ID")
     private Cart cart;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ITEM_ID")
     private Item item;
 
