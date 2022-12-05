@@ -12,7 +12,7 @@ import javax.persistence.*;
 public class ItemImg extends BaseEntity {
     
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ITEM_IMG_ID")
     private Long id;
 
@@ -28,7 +28,7 @@ public class ItemImg extends BaseEntity {
     @Column(name = "REP_IMG_YN")
     private String repImgYn;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "ITEM_ID")
     private Item item;
 

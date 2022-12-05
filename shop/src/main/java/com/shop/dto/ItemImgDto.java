@@ -11,7 +11,7 @@ public class ItemImgDto {
 
     private String imgName;
 
-    private String orgImgName;
+    private String oriImgName;
 
     private String imgUrl;
 
