@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
-public interface ItemRepository extends JpaRepository<Item, Long>, QuerydslPredicateExecutor<Item> {
+public interface ItemRepository extends JpaRepository<Item, Long>, QuerydslPredicateExecutor<Item>,
+                                        ItemRepositoryCustom {
 
     List<Item> findByItemNm(String itemNm);
 
