@@ -22,6 +22,7 @@ spring:
       hibernate:
         show_sql: true
         format_sql: true
+        default_batch_fetch_size: 1000
 
     devtools:
       livereload:
@@ -34,7 +35,7 @@ spring:
 
 itemImgLocation: C:/Users/am23a/SpringEcommerce/shop/images/item
 
-uploadPath: file:///C:/Users/am23a/SpringEcommerce/shop/images
+uploadPath: file:///C:/Users/am23a/SpringEcommerce/shop/images/item
 
 logging:
   level:

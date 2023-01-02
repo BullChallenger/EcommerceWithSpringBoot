@@ -57,18 +57,7 @@ public class ItemService {
         List<ItemImg> itemImgList = itemImgRepository.findByItemIdOrderByIdAsc(itemId);
         List<ItemImgDto> itemImgDtoList = new ArrayList<ItemImgDto>();
 
-        for (ItemImg itemImg : itemImgList) {
-            System.out.println("itemImg Name : " + itemImg.getImgName());
-            System.out.println("itemImg Original Name : " + itemImg.getOriImgName());
-            System.out.println("itemImg Original Name : " + itemImg.getImgUrl());
-        }
         itemImgDtoList = itemImgMapper.toDtoList(itemImgList);
-
-        for (ItemImgDto itemImgDto : itemImgDtoList) {
-            System.out.println("itemImgDto Name : " + itemImgDto.getImgName());
-            System.out.println("itemImgDto Original Name : " + itemImgDto.getOriImgName());
-            System.out.println("itemImgDto Original Name : " + itemImgDto.getImgUrl());
-        }
 
         Item item = itemRepository.findById(itemId).orElseThrow(EntityNotFoundException::new);
         ItemFormDto itemFormDto = itemMapper.toDto(item);
